@@ -213,7 +213,7 @@ a:hover {
 }
 
 .hero-img {
-    width: 300px;
+    width: 200px;
     max-width: 100%;
     border-radius: 20px;
     overflow: hidden;
@@ -446,8 +446,7 @@ a:hover {
     }
 
     .hero-img {
-        width: 350px;
-        height: 350px;
+        width: 250px;
     }
 
     .about-container {
@@ -490,6 +489,6 @@ a:hover {
         max-width: 1400px;
     }
     .hero-img {
-        width: 400px;
+        width: 300px;
     }
 }
