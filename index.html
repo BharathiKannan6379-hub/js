@@ -1,120 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>My Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="portfolio.js" defer></script>
         <link rel="stylesheet" href="portfolio.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Judson:ital,wght@0,400;0,700;1,400&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Mobile Header (Hamburger) -->
+        <header id="mobile-header" class="mobile-header">
+            <div class="mobile-logo">Bharathi Kannan</div>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
+
         <!-- side-bar -->
-        <div id="side-bar"></div>
+        <aside id="side-bar" class="sidebar">
+            <button id="close-menu" class="close-menu" aria-label="Close Navigation">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="logo-container" class="logo-container"></div>
+            <!-- Navigation will be injected by JS -->
+        </aside>
 
-        <!-- /*first container*/ -->
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Section (formerly m-1) -->
+            <section id="hero" class="section hero-section">
+                <div id="hero-text" class="hero-text"></div>
+                <div id="hero-img" class="hero-img"></div>
+            </section>
+            
+            <!-- About & Skills Section (formerly m-2) -->
+            <section id="about" class="section about-section">
+                <div class="about-container">
+                    <div id="about-me" class="about-card"></div>
+                    <div id="skills" class="skills-card"></div>
+                </div>
+            </section>
 
-        <div id="m-1"><div id="m-11"></div><div id="m-12"></div></div>
-        
-        <!-- //second container -->
+            <!-- Project Section (formerly m-3) -->
+            <section id="projects" class="section projects-section">
+                <div class="card project-card">
+                    <h3>Projects</h3>
+                    <div class="project-list">
+                        <h4>Context-Aware Indoor Staff Presence Verification System</h4>
+                        <ul>
+                            <li>Designed a real-time staff tracking system using ESP32 BLE technology with automated attendance logging, eliminating manual check-ins via push notification alerts</li>
+                            <li>Built a secure web dashboard with live activity monitoring, integrating React.js frontend and Node.js backend for seamless real-time updates</li>
+                            <li>Tech Stack: ESP32 BLE, React.js, Node.js, HTML, CSS</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-        <div id="m-2"><div id="m-21"></div><div id="m-22"></div></div>
+            <!-- Experience Section (formerly m-4) -->
+            <section id="experience" class="section experience-section">
+                <div class="card experience-card">
+                    <h3>Experience</h3>
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <h4>Web development Intern <span class="date-location">RineX Technologies, Bengaluru | Jan 2025</span></h4>
+                            <ul>
+                                <li>Built responsive and user-friendly web applications using HTML, CSS, JavaScript, and modern front-end frameworks</li>
+                                <li>Developed dynamic website features and integrated backend services for seamless user interaction</li>
+                                <li>Gained hands-on experience with version control tools and industry-standard web development practices</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Full Stack Developer Intern <span class="date-location">Ed Tantr, Bangalore | Jun 2025</span></h4>
+                            <ul>
+                                <li>Developed full-stack applications using MERN stack, designed REST APIs and handled backend logic for efficient data processing and storage</li>
+                                <li>Collaborated with team members on development, debugging, and delivery of project features</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!-- project container -->
+            <!-- Education Section (formerly m-5) -->
+            <section id="education" class="section education-section">
+                <div class="card education-card">
+                    <h3>Education</h3>
+                    <div class="table-responsive">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Degree</th>
+                                    <th>Institution</th>
+                                    <th>Location</th>
+                                    <th>Year</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Degree">B.E. Computer Science</td>
+                                    <td data-label="Institution">Thamirabharani Engineering College</td>
+                                    <td data-label="Location">Tirunelveli</td>
+                                    <td data-label="Year">2026</td>
+                                    <td data-label="Score">CGPA : 7.33</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Degree">HSC(12th)</td>
+                                    <td data-label="Institution">Government Hr. Sec. School</td>
+                                    <td data-label="Location">Serndamangalam,Tenkasi</td>
+                                    <td data-label="Year">2022</td>
+                                    <td data-label="Score">69%</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Degree">SSLC(10th)</td>
+                                    <td data-label="Institution">Government Hr. Sec. School</td>
+                                    <td data-label="Location">Serndamangalam,Tenkasi</td>
+                                    <td data-label="Year">2020</td>
+                                    <td data-label="Score">71%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
 
-        <div id="m-3">
-            <div id ="project">
-                <h3>Project</h3>
-                
-                <ul><h4>Context-Aware Indoor Staff Presence Verification System</h4>
-                    <li>Designed a real-time staff tracking system using ESP32 BLE technology with automated attendance logging,
-eliminating manual check-ins via push notification alerts</li>
-                        <li>Built a secure web dashboard with live activity monitoring, integrating React.js frontend and Node.js backend
-for seamless real-time updates</li>
-                             <li>Tech Stack: ESP32 BLE, React.js, Node.js, HTML, CSS</li>
-                </ul>
-            </div>
-        </div>
+            <!-- Contact/Footer Section -->
+            <footer id="contact" class="section footer-section">
+                <h2>Contact Info</h2>
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-phone"></i> Phone No : 6379301319 </p>
+                    <p><i class="fa-solid fa-envelope"></i> Email : <a href="mailto:bharathikannan6379@gmail.com">bharathikannan6379@gmail.com</a></p>
+                    <p><i class="fa-solid fa-location-dot"></i> Address : 180/6, North Street, sernthamangalam-627857, Tenkasi.</p>
+                </div>
 
-        <!-- experience container -->
-        <div id="m-4">
-            <div id="intern">
-                <h3>Experience</h3>
-                <ul>
-                    <h4>Web development Intern <span>RineX Technologies, Bengaluru Jan 2025</span></h4>
-                    <li>Built responsive and user-friendly web applications using HTML, CSS, JavaScript, and modern front-end
-frameworks</li>
-                        <li>Developed dynamic website features and integrated backend services for seamless user interaction</li>
-                        <li>Gained hands-on experience with version control tools and industry-standard web development practices</li>
-                    <h4>Full Stack Developer Intern <span>Ed Tantr, Bangalore Jun 2025</span></h4>
-                    <li>Developed full-stack applications using MERN stack, designed REST APIs and handled backend logic for
-efficient data processing and storage</li>
-                        <li>Collaborated with team members on development, debugging, and delivery of project features</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- education container -->
-
-        <div id="m-5">
-
-            <div id="education">
-
-                <h3>Education</h3>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>B.E. Computer Science</td>
-                            <td>Thamirabharani Engineering College</td>
-                            <td>Tirunelveli</td>
-                            <td>2026</td>
-                            <td>CGPA : 7.33</td>
-                        </tr>
-                        <tr>
-                            <td>HSC(12th)</td>
-                            <td>Government Hr. Sec. School</td>
-                            <td>Serndamangalam,Tenkasi</td>
-                            <td>2022</td>
-                            <td>69%</td>
-                        </tr>
-                        <tr>
-                            <td>SSLC(10th)</td>
-                            <td>Government Hr. Sec. School</td>
-                            <td>Serndamangalam,Tenkasi</td>
-                            <td>2020</td>
-                            <td>71%</td>
-                        </tr>
-                       
-                    </tbody>
-                </table>
-
-            </div>
-
-
-
-        </div>
-
-        <!-- contact -->
-
-        <div id="footer">
-
-            <h2>Contact Info</h2>
-            <div id="info">
-                <p><span><i class="fa-solid fa-phone"></i></span>Phone No : 6379301319 </p>
-                <p><span><i class="fa-solid fa-envelope"></i></span>Email    : <a href="mailto:bharathikannan6379@gmail.com">bharathikannan6379@gmail.com</a></p>
-                <p><span><i class="fa-solid fa-location-dot"></i></span> Address : 180/6, North Street ,sernthamangalam-627857,Tenkasi. </p>
-            </div>
-
-            <div id ="media">
-                <i class="fa-brands fa-linkedin" id="link"></i>
-                <i class="fa-brands fa-github" id="git"></i>
-                <i class="fa-brands fa-square-instagram" id="insta"></i>
-            </div>
-
-
-
-        </div>
-    
+                <div class="social-media">
+                    <i class="fa-brands fa-linkedin" id="link" aria-label="LinkedIn" tabindex="0"></i>
+                    <i class="fa-brands fa-github" id="git" aria-label="GitHub" tabindex="0"></i>
+                    <i class="fa-brands fa-square-instagram" id="insta" aria-label="Instagram" tabindex="0"></i>
+                </div>
+            </footer>
+        </main>
     </body>
 </html>
